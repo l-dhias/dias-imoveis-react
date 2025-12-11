@@ -1,7 +1,8 @@
-import styled, { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle } from 'styled-components'
 
 export const cores = {
-  branca: '#8f8f8fff',
+  branco: '#fff',
+  cinzaTexto: '#8f8f8fff',
   preta: '#111',
   cinza: '#333',
   verde: '#10AC84'
@@ -18,13 +19,13 @@ export const GlobalCss = createGlobalStyle`
 
   body {
     background-color: ${cores.preta};
-    color: ${cores.branca};
+    color: ${cores.cinzaTexto};
     padding-top: 40px;
     }
-  `
 
-export const Container = styled.div`
-  max-width: 1024px;
-  width: 100%;
-  margin: 0 auto;
-`
+    .container {
+      max-width: 1024px;
+      width: 100%;
+      margin: 0 auto;
+    }
+  `

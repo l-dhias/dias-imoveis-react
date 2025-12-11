@@ -12,7 +12,7 @@ export const HeaderBar = styled.header`
 
   a {
     text-decoration: none;
-    color: ${cores.branca};
+    color: ${cores.cinzaTexto};
     font-weight: bold;
   }
 
@@ -36,7 +36,7 @@ export const LinkItem = styled.li`
   }
 
   &:hover a {
-    color: #fff;
+    color: ${cores.branco};
     font-weight: 500;
     transform: scale(1.02);
     text-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
