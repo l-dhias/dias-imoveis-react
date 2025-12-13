@@ -12,6 +12,8 @@ const rotas = createBrowserRouter([
       <>
         <Banner />
         <EstateList title="Imóveis" />
+        <EstateList title="Sala Comercial" />
+        <EstateList title="Chalés" />
       </>
     )
   }
