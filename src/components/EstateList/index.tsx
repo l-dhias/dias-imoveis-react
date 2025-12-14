@@ -1,48 +1,29 @@
+import Imoveis from '../../models/Imoveis'
 import Estate from '../Estate'
 
 import { Container, List } from './styles'
 
-type Props = {
+export type Props = {
   title: string
+  imoveis: Imoveis[]
 }
 
-const EstateList = ({ title }: Props) => (
+const EstateList = ({ title, imoveis }: Props) => (
   <Container>
     <div className="container">
       <h2>{title}</h2>
       <List>
-        <Estate
-          category="Imovel Teste"
-          description="teste"
-          image="https://placehold.co/222x250"
-          infos={['-10%', 'R$ 150.000,00']}
-          system="apartamento"
-          title="Vende-se Imovel Teste"
-        />
-        <Estate
-          category="Imovel Teste"
-          description="teste"
-          image="https://placehold.co/222x250"
-          infos={['-10%', 'R$ 150.000,00']}
-          system="apartamento"
-          title="Vende-se Imovel Teste"
-        />
-        <Estate
-          category="Imovel Teste"
-          description="teste"
-          image="https://placehold.co/222x250"
-          infos={['-10%', 'R$ 150.000,00']}
-          system="apartamento"
-          title="Vende-se Imovel Teste"
-        />
-        <Estate
-          category="Imovel Teste"
-          description="teste"
-          image="https://placehold.co/222x250"
-          infos={['-10%', 'R$ 150.000,00']}
-          system="apartamento"
-          title="Vende-se Imovel Teste"
-        />
+        {imoveis.map((imovel) => (
+          <Estate
+            key={imovel.id}
+            category={imovel.category}
+            description={imovel.description}
+            image={imovel.image}
+            infos={imovel.infos}
+            system={imovel.system}
+            title={imovel.title}
+          />
+        ))}
       </List>
     </div>
   </Container>
