@@ -4,22 +4,25 @@ import { Link } from 'react-router-dom'
 import { cores } from '../../styles'
 
 export const ButtonContainer = styled.button`
-  border: 2px solid ${cores.branco};
-  color: ${cores.branco};
-  background-color: rgba(0, 0, 0, 0.5);
-  font-size: 16px;
+  color: ${cores.bege};
+  background-color: ${cores.vermelho};
+  font-size: 14px;
   font-weight: bold;
-  padding: 8px 16px;
-  border-radius: 8px;
+  padding: 8px 8px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
 `
 
 export const ButtonLink = styled(Link)`
-  border: 2px solid ${cores.branco};
-  color: ${cores.branco};
-  background-color: rgba(0, 0, 0, 0.5);
-  font-size: 16px;
+  width: 82px;
+  height: 24px;
+  color: ${cores.bege};
+  background-color: ${cores.vermelho};
+  font-size: 14px;
   font-weight: bold;
-  padding: 8px 16px;
-  text-decoration: none;
-  border-radius: 8px;
+  padding: 8px 8px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
 `
