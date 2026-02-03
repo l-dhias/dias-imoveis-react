@@ -1,12 +1,30 @@
-import { Route, Routes } from 'react-router-dom'
-
+import { Routes, Route } from 'react-router-dom'
 import Home from './pages/Home'
-import Categories from './pages/Categories'
+import Category from './pages/Categories'
+import HomeBaner from './components/HomeBaner'
+import HeaderLink from './components/HeaderLink'
 
 const Rotas = () => (
   <Routes>
-    <Route path="/" element={<Home />} />
-    <Route path="/categories" element={<Categories />} />
+    <Route
+      path="/"
+      element={
+        <>
+          <HomeBaner />
+          <Home />
+        </>
+      }
+    />
+
+    <Route
+      path="/categories/:category"
+      element={
+        <>
+          <HeaderLink />
+          <Category />
+        </>
+      }
+    />
   </Routes>
 )
 

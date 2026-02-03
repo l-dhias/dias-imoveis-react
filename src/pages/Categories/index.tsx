@@ -1,142 +1,149 @@
-import EstateList from '../../components/EstateList'
-import Imoveis from '../../models/Imoveis'
+import { useParams } from 'react-router-dom'
+import DishesList from '../../components/DishesList'
+import Banner from '../../components/Banner'
+import Food from '../../models/Food'
 
-const promoçoes: Imoveis[] = [
+import sushi from '../../assets/images/sushi.png'
+import pizza from '../../assets/images/pizza.png'
+import estrela from '../../assets/images/estrela.svg'
+const foods: Food[] = [
   {
     id: 1,
-    category: 'Apartamento',
-    description:
-      'Este apartamento oferece conforto e funcionalidade em um espaço bem distribuído, ideal para quem busca praticidade sem abrir mão de qualidade de vida...',
-    title: 'Apartamento Moderno',
-    system: 'venda',
-    infos: ['10%', 'R$ 250.000,00'],
-    image: 'https://placehold.co/222x250'
+    restaurantId: 1,
+    category: 'sushi',
+    title: 'Hioki Sushi',
+    description: 'Peça já o melhor da culinária japonesa...',
+    image: sushi,
+    imageIcon: estrela
   },
   {
     id: 2,
-    category: 'Apartamento',
-    description:
-      'Este apartamento oferece conforto e funcionalidade em um espaço bem distribuído, ideal para quem busca praticidade sem abrir mão de qualidade de vida...',
-    title: 'Apartamento Moderno',
-    system: 'venda',
-    infos: ['10%', 'R$ 250.000,00'],
-    image: 'https://placehold.co/222x250'
+    restaurantId: 1,
+    category: 'sushi',
+    title: 'Hioki Sushi',
+    description: 'Peça já o melhor da culinária japonesa...',
+    image: sushi,
+    imageIcon: estrela
   },
   {
     id: 3,
-    category: 'Apartamento',
-    description:
-      'Este apartamento oferece conforto e funcionalidade em um espaço bem distribuído, ideal para quem busca praticidade sem abrir mão de qualidade de vida...',
-    title: 'Apartamento Moderno',
-    system: 'venda',
-    infos: ['10%', 'R$ 250.000,00'],
-    image: 'https://placehold.co/222x250'
+    restaurantId: 1,
+    category: 'sushi',
+    title: 'Hioki Sushi',
+    description: 'Peça já o melhor da culinária japonesa...',
+    image: sushi,
+    imageIcon: estrela
   },
   {
     id: 4,
-    category: 'Apartamento',
-    description:
-      'Este apartamento oferece conforto e funcionalidade em um espaço bem distribuído, ideal para quem busca praticidade sem abrir mão de qualidade de vida...',
-    title: 'Apartamento Moderno',
-    system: 'venda',
-    infos: ['10%', 'R$ 250.000,00'],
-    image: 'https://placehold.co/222x250'
-  }
-]
-
-const comercio: Imoveis[] = [
+    restaurantId: 1,
+    category: 'sushi',
+    title: 'Hioki Sushi',
+    description: 'Peça já o melhor da culinária japonesa...',
+    image: sushi,
+    imageIcon: estrela
+  },
   {
     id: 5,
-    category: 'Comércio',
-    description:
-      'Este apartamento oferece conforto e funcionalidade em um espaço bem distribuído, ideal para quem busca praticidade sem abrir mão de qualidade de vida...',
-    title: 'Apartamento Moderno',
-    system: 'venda',
-    infos: ['15%', 'R$ 400.000,00'],
-    image: 'https://placehold.co/222x250'
+    restaurantId: 1,
+    category: 'sushi',
+    title: 'Hioki Sushi',
+    description: 'Peça já o melhor da culinária japonesa...',
+    image: sushi,
+    imageIcon: estrela
   },
   {
     id: 6,
-    category: 'Comércio',
-    description:
-      'Este apartamento oferece conforto e funcionalidade em um espaço bem distribuído, ideal para quem busca praticidade sem abrir mão de qualidade de vida...',
-    title: 'Apartamento Moderno',
-    system: 'venda',
-    infos: ['15%', 'R$ 400.000,00'],
-    image: 'https://placehold.co/222x250'
+    restaurantId: 1,
+    category: 'sushi',
+    title: 'Hioki Sushi',
+    description: 'Peça já o melhor da culinária japonesa...',
+    image: sushi,
+    imageIcon: estrela
   },
   {
     id: 7,
-    category: 'Comércio',
+    restaurantId: 2,
+    category: 'massa',
+    title: 'Pizza Marguerita',
     description:
-      'Este apartamento oferece conforto e funcionalidade em um espaço bem distribuído, ideal para quem busca praticidade sem abrir mão de qualidade de vida...',
-    title: 'Apartamento Moderno',
-    system: 'venda',
-    infos: ['15%', 'R$ 400.000,00'],
-    image: 'https://placehold.co/222x250'
+      'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
+    image: pizza,
+    imageIcon: estrela
   },
   {
     id: 8,
-    category: 'Comércio',
+    restaurantId: 2,
+    category: 'massa',
+    title: 'Pizza Marguerita',
     description:
-      'Este apartamento oferece conforto e funcionalidade em um espaço bem distribuído, ideal para quem busca praticidade sem abrir mão de qualidade de vida...',
-    title: 'Apartamento Moderno',
-    system: 'venda',
-    infos: ['15%', 'R$ 400.000,00'],
-    image: 'https://placehold.co/222x250'
-  }
-]
-
-const chales: Imoveis[] = [
+      'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
+    image: pizza,
+    imageIcon: estrela
+  },
   {
     id: 9,
-    category: 'Chalé',
+    restaurantId: 2,
+    category: 'massa',
+    title: 'Pizza Marguerita',
     description:
-      'Este apartamento oferece conforto e funcionalidade em um espaço bem distribuído, ideal para quem busca praticidade sem abrir mão de qualidade de vida...',
-    title: 'Apartamento Moderno',
-    system: 'Diárias',
-    infos: ['5%', 'R$ 3000,00'],
-    image: 'https://placehold.co/222x250'
+      'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
+    image: pizza,
+    imageIcon: estrela
   },
   {
     id: 10,
-    category: 'Chalé',
+    restaurantId: 2,
+    category: 'massa',
+    title: 'Pizza Marguerita',
     description:
-      'Este apartamento oferece conforto e funcionalidade em um espaço bem distribuído, ideal para quem busca praticidade sem abrir mão de qualidade de vida...',
-    title: 'Apartamento Moderno',
-    system: 'Diárias',
-    infos: ['5%', 'R$ 3000,00'],
-    image: 'https://placehold.co/222x250'
+      'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
+    image: pizza,
+    imageIcon: estrela
   },
   {
     id: 11,
-    category: 'Chalé',
+    restaurantId: 2,
+    category: 'massa',
+    title: 'Pizza Marguerita',
     description:
-      'Este apartamento oferece conforto e funcionalidade em um espaço bem distribuído, ideal para quem busca praticidade sem abrir mão de qualidade de vida...',
-    title: 'Apartamento Moderno',
-    system: 'Diárias',
-    infos: ['5%', 'R$ 3000,00'],
-    image: 'https://placehold.co/222x250'
+      'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
+    image: pizza,
+    imageIcon: estrela
   },
   {
     id: 12,
-    category: 'Chalé',
+    restaurantId: 2,
+    category: 'massa',
+    title: 'Pizza Marguerita',
     description:
-      'Este apartamento oferece conforto e funcionalidade em um espaço bem distribuído, ideal para quem busca praticidade sem abrir mão de qualidade de vida...',
-    title: 'Apartamento Moderno',
-    system: 'Diárias',
-    infos: ['5%', 'R$ 3000,00'],
-    image: 'https://placehold.co/222x250'
+      'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
+    image: pizza,
+    imageIcon: estrela
   }
 ]
 
-const Categories = () => (
-  <>
-    <EstateList imoveis={promoçoes} title="Urbanho" />
-    <EstateList imoveis={comercio} title="Comércio" />
-    <EstateList imoveis={chales} title="Chalés" />
-    <EstateList imoveis={comercio} title="Rual" />
-  </>
-)
+const Category = () => {
+  const { category } = useParams<{ category: string }>()
 
-export default Categories
+  const filteredFoods = foods.filter((food) => food.category === category)
+
+  return (
+    <>
+      <Banner />
+      <DishesList
+        food={filteredFoods}
+        title={`Categoria: ${category}`}
+        backgroundColor={'red'}
+        color="bege"
+        border="none"
+        button="big"
+        cardlist="large"
+        icon="none"
+        buttonText="Adicionar ao carrinho"
+      />
+    </>
+  )
+}
+
+export default Category
